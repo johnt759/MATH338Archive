@@ -1,0 +1,15 @@
+Beer2 <- read.csv("~/R/Beer2.csv")
+View(Beer2)
+attach(Beer2)
+mean(Carbohydrates)
+sd(Carbohydrates)
+sample20=numeric(20)
+for(i in 1:20)
+{
+  sample20[i]=mean(sample(Carbohydrates,20))
+}
+mean(sample20)
+qnorm(0.1,mean(sample20),sd(sample20)/sqrt(20))
+qnorm(0.9,mean(sample20),sd(sample20)/sqrt(20))
+qnorm(0.05,mean(sample20),sd(sample20)/sqrt(20))
+qnorm(0.95,mean(sample20),sd(sample20)/sqrt(20))
